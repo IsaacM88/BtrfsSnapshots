@@ -1,5 +1,5 @@
 # BtrfsSnapshots
-This bash script creates and deletes Btrfs subvolume snapshots on a schedule using Cron. Errors will appear throught Gnome's notification system. This was tested on Fedora Workstation 37.
+This bash script creates and deletes Btrfs subvolume snapshots on a schedule using Cron. Errors will appear through Gnome's notification system. This was tested on Fedora Workstation 37.
 
 Install and enable Cronie if you don’t already have it.
 ```

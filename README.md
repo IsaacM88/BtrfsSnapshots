@@ -34,3 +34,12 @@ View job log and check /snapshots/ to make sure it is working properly.
 ```
 journalctl -u crond.service
 ```
+To restore a subvolume back to its snapshot, move and rename the old subvolume and then move and rename the snapshot subvolume. Live boot Fedora from a USB drive. Decrypt and mount your filesystem using Gnome Disks. Perform moves and renames.
+```
+sudo mv /run/media/liveuser/fedora_localhost-live/home /run/media/liveuser/fedora_localhost-live/snapshots/home-broken
+sudo mv /run/media/liveuser/fedora_localhost-live/snapshots/auto_home_2023-02-02_18:42 /run/media/liveuser/fedora_localhost-live/home
+```
+Boot into your Fedora installation and delete the broken subvolume when you feel comfortable.
+```
+sudo btrfs subvolume delete /snapshots/home-broken
+```

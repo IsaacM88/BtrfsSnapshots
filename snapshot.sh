@@ -52,9 +52,9 @@ function delete {
 	done
 }
 
-# Create snapshots of root and home subvolumes.
+# Create snapshots of all subvolumes in volPaths.
 function create {
-	snapTime=$(date +"%F_%R")
+	snapTime=$(date +"%F_%H-%M-%S")
 	for volPath in "${volPaths[@]}"; do
 		# Get the subvolume's name and verify that the subvolume exists.
 		volName=$(btrfs subvolume show "$volPath" | grep -oP "Name:\s*\K.*$")

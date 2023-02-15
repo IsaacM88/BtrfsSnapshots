@@ -34,7 +34,7 @@ View job log and check /snapshots/ to make sure it is working properly.
 ```
 journalctl -u crond.service
 ```
-Exclude /snapshots directory from "locate" (updatedb) by adding "/snapshots" to "PRUNEPATHS" in "updatedb.conf"
+Exclude /snapshots directory from "plocate" (updatedb) by adding "/snapshots" to "PRUNEPATHS" in "updatedb.conf".
 ```
 sudo vi /etc/updatedb.conf
   PRUNEPATHS = "/somedir /snapshots"

@@ -34,6 +34,11 @@ View job log and check /snapshots/ to make sure it is working properly.
 ```
 journalctl -u crond.service
 ```
+Exclude /snapshots directory from "locate" (updatedb) by adding "/snapshots" to "PRUNEPATHS" in "updatedb.conf"
+```
+sudo vi /etc/updatedb.conf
+  PRUNEPATHS = "/somedir /snapshots"
+```
 To restore a subvolume back to its snapshot, move and rename the old subvolume and then move and rename the snapshot subvolume. Live boot Fedora from a USB drive. Decrypt and mount your filesystem using Gnome Disks. Perform moves and renames.
 ```
 sudo mv /run/media/liveuser/fedora_localhost-live/home /run/media/liveuser/fedora_localhost-live/snapshots/home-broken
